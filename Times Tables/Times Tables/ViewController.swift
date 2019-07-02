@@ -27,7 +27,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
         
-        cell.textLabel?.text = String(Int(slider.value) * (indexPath.row + 1))
+        let value = "\(Int(slider.value)) X \(indexPath.row + 1) = \(Int(slider.value) * (indexPath.row + 1))"
+        
+        cell.textLabel?.text = value
         
         return cell
     }
